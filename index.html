@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Browse :: Nyaa</title>
+
+		<meta name="viewport" content="width=480px">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" type="image/png" href="/static/favicon.png">
+		<link rel="icon" type="image/png" href="/static/favicon.png">
+		<link rel="mask-icon" href="/static/pinned-tab.svg" color="#3582F7">
+		<link rel="alternate" type="application/rss+xml" href="https://nyaa.si/?page=rss" />
+
+		<meta property="og:site_name" content="Nyaa">
+		<meta property="og:title" content="Browse :: Nyaa">
+		<meta property="og:image" content="/static/img/avatar/default.png">
+<meta name="description" content="A BitTorrent community focused on Eastern Asian media including anime, manga, music, and more">
+<meta name="keywords" content="torrents, bittorrent, torrent, anime, manga, sukebei, download, nyaa, magnet, magnets">
+<meta property="og:description" content="Nyaa homepage">
+
+		<!-- Bootstrap core CSS -->
+		<!--
+			Note: This has been customized at http://getbootstrap.com/customize/ to
+			set the column breakpoint to tablet mode, instead of mobile. This is to
+			make the navbar not look awful on tablets.
+		-->
+		<link href="/static/css/bootstrap.min.css?t=1608007388" rel="stylesheet" id="bsThemeLink">
+		<link href="/static/css/bootstrap-xl-mod.css?t=1608007388" rel="stylesheet">
+		<!--
+			This theme changer script needs to be inline and right under the above stylesheet link to prevent FOUC (Flash Of Unstyled Content)
+			Development version is commented out in static/js/main.js at the bottom of the file
+		-->
+		<script>function toggleDarkMode(){"dark"===localStorage.getItem("theme")?setThemeLight():setThemeDark()}function setThemeDark(){bsThemeLink.href="/static/css/bootstrap-dark.min.css?t=1608007388",localStorage.setItem("theme","dark"),document.body!==null&&document.body.classList.add('dark')}function setThemeLight(){bsThemeLink.href="/static/css/bootstrap.min.css?t=1608007388",localStorage.setItem("theme","light"),document.body!==null&&document.body.classList.remove('dark')}if("undefined"!=typeof Storage){var bsThemeLink=document.getElementById("bsThemeLink");"dark"===localStorage.getItem("theme")&&setThemeDark()}</script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" integrity="sha256-an4uqLnVJ2flr7w0U74xiF4PJjO2N5Df91R2CUmCLCA=" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+		<!-- Custom styles for this template -->
+		<link href="/static/css/main.css?t=1645052395" rel="stylesheet">
+
+		<!-- Core JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.3.1/markdown-it.min.js" integrity="sha256-3WZyZQOe+ql3pLo90lrkRtALrlniGdnf//gRpW0UQks=" crossorigin="anonymous"></script>
+		<!-- Modified to not apply border-radius to selectpickers and stuff so our navbar looks cool -->
+		<script src="/static/js/bootstrap-select.min.js?t=1623304983"></script>
+		<script src="/static/js/main.min.js?t=1623304983"></script>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<link rel="search" type="application/opensearchdescription+xml" title="Nyaa.si" href="/static/search.xml">
+	</head>
+	<body>
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">Nyaa</a>
+				</div><!--/.navbar-header -->
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li ><a href="/upload">Upload</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								Info
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li ><a href="/rules">Rules</a></li>
+								<li ><a href="/help">Help</a></li>
+							</ul>
+						</li>
+						<li><a href="/?page=rss">RSS</a></li>
+						<li><a href="https://twitter.com/NyaaV2">Twitter</a></li>
+						<li><a href="//sukebei.nyaa.si">Fap</a></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle visible-lg visible-sm visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-user fa-fw"></i>
+								Guest
+								<span class="caret"></span>
+							</a>
+							<a href="#" class="dropdown-toggle hidden-lg hidden-sm hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-user fa-fw"></i>
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="/login">
+										<i class="fa fa-sign-in fa-fw"></i>
+										Login
+									</a>
+								</li>
+								<li>
+									<a href="/register">
+										<i class="fa fa-pencil fa-fw"></i>
+										Register
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+
+
+					<div class="search-container visible-xs visible-sm">
+						<form class="navbar-form navbar-right form" action="/" method="get">
+
+							<input type="text" class="form-control" name="q" placeholder="Search..." value="">
+							<br>
+
+							<select class="form-control" title="Filter" data-width="120px" name="f">
+								<option value="0" title="No filter" selected>No filter</option>
+								<option value="1" title="No remakes" >No remakes</option>
+								<option value="2" title="Trusted only" >Trusted only</option>
+							</select>
+
+							<br>
+
+							<select class="form-control" title="Category" data-width="200px" name="c">
+								<option value="0_0" title="All categories" selected>
+									All categories
+								</option>
+								<option value="1_0" title="Anime" >
+									Anime
+								</option>
+								<option value="1_1" title="Anime - AMV" >
+									- Anime Music Video
+								</option>
+								<option value="1_2" title="Anime - English" >
+									- English-translated
+								</option>
+								<option value="1_3" title="Anime - Non-English" >
+									- Non-English-translated
+								</option>
+								<option value="1_4" title="Anime - Raw" >
+									- Raw
+								</option>
+								<option value="2_0" title="Audio" >
+									Audio
+								</option>
+								<option value="2_1" title="Audio - Lossless" >
+									- Lossless
+								</option>
+								<option value="2_2" title="Audio - Lossy" >
+									- Lossy
+								</option>
+								<option value="3_0" title="Literature" >
+									Literature
+								</option>
+								<option value="3_1" title="Literature - English" >
+									- English-translated
+								</option>
+								<option value="3_2" title="Literature - Non-English" >
+									- Non-English-translated
+								</option>
+								<option value="3_3" title="Literature - Raw" >
+									- Raw
+								</option>
+								<option value="4_0" title="Live Action" >
+									Live Action
+								</option>
+								<option value="4_1" title="Live Action - English" >
+									- English-translated
+								</option>
+								<option value="4_2" title="Live Action - Idol/PV" >
+									- Idol/Promotional Video
+								</option>
+								<option value="4_3" title="Live Action - Non-English" >
+									- Non-English-translated
+								</option>
+								<option value="4_4" title="Live Action - Raw" >
+									- Raw
+								</option>
+								<option value="5_0" title="Pictures" >
+									Pictures
+								</option>
+								<option value="5_1" title="Pictures - Graphics" >
+									- Graphics
+								</option>
+								<option value="5_2" title="Pictures - Photos" >
+									- Photos
+								</option>
+								<option value="6_0" title="Software" >
+									Software
+								</option>
+								<option value="6_1" title="Software - Apps" >
+									- Applications
+								</option>
+								<option value="6_2" title="Software - Games" >
+									- Games
+								</option>
+							</select>
+
+							<br>
+
+							<button class="btn btn-primary form-control" type="submit">
+								<i class="fa fa-search fa-fw"></i> Search
+							</button>
+						</form>
+					</div><!--/.search-container -->
+
+					<form class="navbar-form navbar-right form" action="/" method="get">
+						<div class="input-group search-container hidden-xs hidden-sm">
+							<div class="input-group-btn nav-filter" id="navFilter-criteria">
+								<select class="selectpicker show-tick" title="Filter" data-width="120px" name="f">
+									<option value="0" title="No filter" selected>No filter</option>
+									<option value="1" title="No remakes" >No remakes</option>
+									<option value="2" title="Trusted only" >Trusted only</option>
+								</select>
+							</div>
+
+							<div class="input-group-btn nav-filter" id="navFilter-category">
+								<!--
+									On narrow viewports, there isn't enough room to fit the full stuff in the selectpicker, so we show a full-width one on wide viewports, but squish it on narrow ones.
+								-->
+								<select class="selectpicker show-tick" title="Category" data-width="130px" name="c">
+									<option value="0_0" title="All categories" selected>
+										All categories
+									</option>
+									<option value="1_0" title="Anime" >
+										Anime
+									</option>
+									<option value="1_1" title="Anime - AMV" >
+										- Anime Music Video
+									</option>
+									<option value="1_2" title="Anime - English" >
+										- English-translated
+									</option>
+									<option value="1_3" title="Anime - Non-English" >
+										- Non-English-translated
+									</option>
+									<option value="1_4" title="Anime - Raw" >
+										- Raw
+									</option>
+									<option value="2_0" title="Audio" >
+										Audio
+									</option>
+									<option value="2_1" title="Audio - Lossless" >
+										- Lossless
+									</option>
+									<option value="2_2" title="Audio - Lossy" >
+										- Lossy
+									</option>
+									<option value="3_0" title="Literature" >
+										Literature
+									</option>
+									<option value="3_1" title="Literature - English" >
+										- English-translated
+									</option>
+									<option value="3_2" title="Literature - Non-English" >
+										- Non-English-translated
+									</option>
+									<option value="3_3" title="Literature - Raw" >
+										- Raw
+									</option>
+									<option value="4_0" title="Live Action" >
+										Live Action
+									</option>
+									<option value="4_1" title="Live Action - English" >
+										- English-translated
+									</option>
+									<option value="4_2" title="Live Action - Idol/PV" >
+										- Idol/Promotional Video
+									</option>
+									<option value="4_3" title="Live Action - Non-English" >
+										- Non-English-translated
+									</option>
+									<option value="4_4" title="Live Action - Raw" >
+										- Raw
+									</option>
+									<option value="5_0" title="Pictures" >
+										Pictures
+									</option>
+									<option value="5_1" title="Pictures - Graphics" >
+										- Graphics
+									</option>
+									<option value="5_2" title="Pictures - Photos" >
+										- Photos
+									</option>
+									<option value="6_0" title="Software" >
+										Software
+									</option>
+									<option value="6_1" title="Software - Apps" >
+										- Applications
+									</option>
+									<option value="6_2" title="Software - Games" >
+										- Games
+									</option>
+								</select>
+							</div>
+							<input type="text" class="form-control search-bar" name="q" placeholder="Search..." value="" />
+							<div class="input-group-btn search-btn">
+								<button class="btn btn-primary" type="submit">
+									<i class="fa fa-search fa-fw"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div><!--/.nav-collapse -->
+			</div><!--/.container -->
+		</nav>
+
+		<div class="container">
+
+
+
+
+
+<div class="table-responsive">
+	<table class="table table-bordered table-hover table-striped torrent-list">
+		<thead>
+			<tr>
+				<th class="hdr-category text-center" style="width:80px;">Category</th>
+				<th class="hdr-name" style="width:auto;">Name</th>
+				<th class="hdr-comments sorting text-center" title="Comments" style="width:50px;"><a href="/?s=comments&amp;o=desc"></a><i class="fa fa-comments-o"></i></th>
+				<th class="hdr-link text-center" style="width:70px;">Link</th>
+				<th class="hdr-size sorting text-center" style="width:100px;"><a href="/?s=size&amp;o=desc"></a>Size</th>
+				<th class="hdr-date sorting_desc text-center" title="In UTC" style="width:140px;"><a href="/?s=id&amp;o=asc"></a>Date</th>
+
+				<th class="hdr-seeders sorting text-center" title="Seeders" style="width:50px;"><a href="/?s=seeders&amp;o=desc"></a><i class="fa fa-arrow-up" aria-hidden="true"></i></th>
+				<th class="hdr-leechers sorting text-center" title="Leechers" style="width:50px;"><a href="/?s=leechers&amp;o=desc"></a><i class="fa fa-arrow-down" aria-hidden="true"></i></th>
+				<th class="hdr-downloads sorting text-center" title="Completed downloads" style="width:50px;"><a href="/?s=downloads&amp;o=desc"></a><i class="fa fa-check" aria-hidden="true"></i></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="danger">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525412" title="[Raze] Spy x Family - 05 x265 10bit 1080p 144fps.mkv">[Raze] Spy x Family - 05 x265 10bit 1080p 144fps.mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525412.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:3eb0335969bfc4d0b56b764921b8b359bf6af4c0&amp;dn=%5BRaze%5D%20Spy%20x%20Family%20-%2005%20x265%2010bit%201080p%20144fps.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.2 GiB</td>
+				<td class="text-center" data-timestamp="1651946239">2022-05-07 17:57</td>
+
+				<td class="text-center">1</td>
+				<td class="text-center">0</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=3_3" title="Literature - Raw">
+						<img src="/static/img/icons/nyaa/3_3.png" alt="Literature - Raw" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525411" title="父は英雄、母は精霊、娘の私は転生者。 第01-07巻 [Chichi wa Eiyu Haha wa Seirei Musume no Watashi wa Tenseisha vol 01-07]">父は英雄、母は精霊、娘の私は転生者。 第01-07巻 [Chichi wa Eiyu Haha wa Seirei Musume no Watashi wa Tenseisha vol 01-07]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525411.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:2081e75f87cd25fe802cb2ea3b4f1f4a150ec34f&amp;dn=%E7%88%B6%E3%81%AF%E8%8B%B1%E9%9B%84%E3%80%81%E6%AF%8D%E3%81%AF%E7%B2%BE%E9%9C%8A%E3%80%81%E5%A8%98%E3%81%AE%E7%A7%81%E3%81%AF%E8%BB%A2%E7%94%9F%E8%80%85%E3%80%82%20%E7%AC%AC01-07%E5%B7%BB%20%5BChichi%20wa%20Eiyu%20Haha%20wa%20Seirei%20Musume%20no%20Watashi%20wa%20Tenseisha%20vol%2001-07%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">323.3 MiB</td>
+				<td class="text-center" data-timestamp="1651946018">2022-05-07 17:53</td>
+
+				<td class="text-center">0</td>
+				<td class="text-center">19</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525410" title="[inverness Subs] [Esp-LA] Love Live! Nijigasaki Gakuen School Idol Doukoukai - S02E06 - 480p x264.mkv">[inverness Subs] [Esp-LA] Love Live! Nijigasaki Gakuen School Idol Doukoukai - S02E06 - 480p x264.mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525410.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:12d050ccea387a40d8223a3a646be73ad14bd98e&amp;dn=%5Binverness%20Subs%5D%20%5BEsp-LA%5D%20Love%20Live%21%20Nijigasaki%20Gakuen%20School%20Idol%20Doukoukai%20-%20S02E06%20-%20480p%20x264.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">164.7 MiB</td>
+				<td class="text-center" data-timestamp="1651945922">2022-05-07 17:52</td>
+
+				<td class="text-center">0</td>
+				<td class="text-center">2</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525409" title="[inverness Subs] [Esp-LA] Love Live! Nijigasaki Gakuen School Idol Doukoukai - S02E06 - 720p x264.mkv">[inverness Subs] [Esp-LA] Love Live! Nijigasaki Gakuen School Idol Doukoukai - S02E06 - 720p x264.mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525409.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:47c4718606f5d23557693cc2e9dd6e641151a78f&amp;dn=%5Binverness%20Subs%5D%20%5BEsp-LA%5D%20Love%20Live%21%20Nijigasaki%20Gakuen%20School%20Idol%20Doukoukai%20-%20S02E06%20-%20720p%20x264.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">264.2 MiB</td>
+				<td class="text-center" data-timestamp="1651945908">2022-05-07 17:51</td>
+
+				<td class="text-center">0</td>
+				<td class="text-center">2</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525408" title="[inverness Subs] [Esp-LA] Love Live! Nijigasaki Gakuen School Idol Doukoukai - S02E06 - 1080p x264.mkv">[inverness Subs] [Esp-LA] Love Live! Nijigasaki Gakuen School Idol Doukoukai - S02E06 - 1080p x264.mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525408.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:cb3aeb36ba09f60b65c68af5a023965270ac86a0&amp;dn=%5Binverness%20Subs%5D%20%5BEsp-LA%5D%20Love%20Live%21%20Nijigasaki%20Gakuen%20School%20Idol%20Doukoukai%20-%20S02E06%20-%201080p%20x264.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">477.1 MiB</td>
+				<td class="text-center" data-timestamp="1651945897">2022-05-07 17:51</td>
+
+				<td class="text-center">0</td>
+				<td class="text-center">3</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="danger">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525407" title="[EMBER] Spy x Family S01E05 [1080p] [HEVC WEBRip]">[EMBER] Spy x Family S01E05 [1080p] [HEVC WEBRip]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525407.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:36ce3130673b8af34c5f2074997813a0af1e2203&amp;dn=%5BEMBER%5D%20Spy%20x%20Family%20S01E05%20%5B1080p%5D%20%5BHEVC%20WEBRip%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">402.6 MiB</td>
+				<td class="text-center" data-timestamp="1651945872">2022-05-07 17:51</td>
+
+				<td class="text-center">21</td>
+				<td class="text-center">48</td>
+				<td class="text-center">21</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525406" title="[Lilith-Raws x WitEx.io] 式守同學不只可愛而已 / Kawaii dake ja Nai Shikimori-san - 05 [Baha][WEB-DL][1080p][AVC AAC][CHT][MP4]">[Lilith-Raws x WitEx.io] 式守同學不只可愛而已 / Kawaii dake ja Nai Shikimori-san - 05 [Baha][WEB-DL][1080p][AVC AAC][CHT][MP4]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525406.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:43403ab26cbc863205dc3df094dccb638002e760&amp;dn=%5BLilith-Raws%20x%20WitEx.io%5D%20%E5%BC%8F%E5%AE%88%E5%90%8C%E5%AD%B8%E4%B8%8D%E5%8F%AA%E5%8F%AF%E6%84%9B%E8%80%8C%E5%B7%B2%20%2F%20Kawaii%20dake%20ja%20Nai%20Shikimori-san%20-%2005%20%5BBaha%5D%5BWEB-DL%5D%5B1080p%5D%5BAVC%20AAC%5D%5BCHT%5D%5BMP4%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">416.4 MiB</td>
+				<td class="text-center" data-timestamp="1651945676">2022-05-07 17:47</td>
+
+				<td class="text-center">25</td>
+				<td class="text-center">51</td>
+				<td class="text-center">16</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525405" title="[DKB] Spy x Family - S01E05 [1080p][HEVC x265 10bit][Multi-Subs][weekly]">[DKB] Spy x Family - S01E05 [1080p][HEVC x265 10bit][Multi-Subs][weekly]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525405.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:3cb11f14def18f2cb3594d0a9e2b87f1e3517dec&amp;dn=%5BDKB%5D%20Spy%20x%20Family%20-%20S01E05%20%5B1080p%5D%5BHEVC%20x265%2010bit%5D%5BMulti-Subs%5D%5Bweekly%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">522.0 MiB</td>
+				<td class="text-center" data-timestamp="1651945268">2022-05-07 17:41</td>
+
+				<td class="text-center">29</td>
+				<td class="text-center">10</td>
+				<td class="text-center">28</td>
+			</tr>
+			<tr class="danger">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525404" title="[Anime Time] Spy X Family - 05 [1080p][HEVC 10bit x265][AAC][Multi Sub] [Weekly].mkv">[Anime Time] Spy X Family - 05 [1080p][HEVC 10bit x265][AAC][Multi Sub] [Weekly].mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525404.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:88f81eeb5f485df5c865f956a5b10a6558c994b3&amp;dn=%5BAnime%20Time%5D%20Spy%20X%20Family%20-%2005%20%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D%5BMulti%20Sub%5D%20%5BWeekly%5D.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">471.3 MiB</td>
+				<td class="text-center" data-timestamp="1651945249">2022-05-07 17:40</td>
+
+				<td class="text-center">24</td>
+				<td class="text-center">43</td>
+				<td class="text-center">21</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525403" title="[ANi] Shikimoris Not Just a Cutie -  式守同學不只可愛而已 - 05 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]">[ANi] Shikimoris Not Just a Cutie -  式守同學不只可愛而已 - 05 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525403.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:73b9ed6565d20b55325a48b3ca5e0ff131b1c924&amp;dn=%5BANi%5D%20Shikimoris%20Not%20Just%20a%20Cutie%20-%20%20%E5%BC%8F%E5%AE%88%E5%90%8C%E5%AD%B8%E4%B8%8D%E5%8F%AA%E5%8F%AF%E6%84%9B%E8%80%8C%E5%B7%B2%20-%2005%20%5B1080P%5D%5BBaha%5D%5BWEB-DL%5D%5BAAC%20AVC%5D%5BCHT%5D%5BMP4%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">416.7 MiB</td>
+				<td class="text-center" data-timestamp="1651944919">2022-05-07 17:35</td>
+
+				<td class="text-center">29</td>
+				<td class="text-center">41</td>
+				<td class="text-center">30</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525402" title="[桜都字幕组] 街角魔族 2丁目 / Machikado Mazoku: 2-choume  [05][1080P][简繁内封]">[桜都字幕组] 街角魔族 2丁目 / Machikado Mazoku: 2-choume  [05][1080P][简繁内封]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525402.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:2095129c6ca9fa4e16a7492d0f9cda7064f6abfc&amp;dn=%5B%E6%A1%9C%E9%83%BD%E5%AD%97%E5%B9%95%E7%BB%84%5D%20%E8%A1%97%E8%A7%92%E9%AD%94%E6%97%8F%202%E4%B8%81%E7%9B%AE%20%2F%20Machikado%20Mazoku%3A%202-choume%20%20%5B05%5D%5B1080P%5D%5B%E7%AE%80%E7%B9%81%E5%86%85%E5%B0%81%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">352.1 MiB</td>
+				<td class="text-center" data-timestamp="1651944782">2022-05-07 17:33</td>
+
+				<td class="text-center">21</td>
+				<td class="text-center">17</td>
+				<td class="text-center">22</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525401" title="[桜都字幕组] 街角魔族 2丁目 / Machikado Mazoku: 2-choume  [05][1080P][繁体内嵌]">[桜都字幕组] 街角魔族 2丁目 / Machikado Mazoku: 2-choume  [05][1080P][繁体内嵌]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525401.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:517fd0eee9b204aa21df960e1671ce866c173bb7&amp;dn=%5B%E6%A1%9C%E9%83%BD%E5%AD%97%E5%B9%95%E7%BB%84%5D%20%E8%A1%97%E8%A7%92%E9%AD%94%E6%97%8F%202%E4%B8%81%E7%9B%AE%20%2F%20Machikado%20Mazoku%3A%202-choume%20%20%5B05%5D%5B1080P%5D%5B%E7%B9%81%E4%BD%93%E5%86%85%E5%B5%8C%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">355.9 MiB</td>
+				<td class="text-center" data-timestamp="1651944772">2022-05-07 17:32</td>
+
+				<td class="text-center">22</td>
+				<td class="text-center">15</td>
+				<td class="text-center">18</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525400" title="[桜都字幕组] 街角魔族 2丁目 / Machikado Mazoku: 2-choume  [05][1080P][简体内嵌]">[桜都字幕组] 街角魔族 2丁目 / Machikado Mazoku: 2-choume  [05][1080P][简体内嵌]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525400.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:b31d9fb9b5160460538e804f42152060eab54add&amp;dn=%5B%E6%A1%9C%E9%83%BD%E5%AD%97%E5%B9%95%E7%BB%84%5D%20%E8%A1%97%E8%A7%92%E9%AD%94%E6%97%8F%202%E4%B8%81%E7%9B%AE%20%2F%20Machikado%20Mazoku%3A%202-choume%20%20%5B05%5D%5B1080P%5D%5B%E7%AE%80%E4%BD%93%E5%86%85%E5%B5%8C%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">356.0 MiB</td>
+				<td class="text-center" data-timestamp="1651944758">2022-05-07 17:32</td>
+
+				<td class="text-center">17</td>
+				<td class="text-center">20</td>
+				<td class="text-center">13</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525399" title="[NC-Raws] 式守同學不只可愛而已 / Kawaii dake ja Nai Shikimori-san - 05 (Baha 1920x1080 AVC AAC MP4)">[NC-Raws] 式守同學不只可愛而已 / Kawaii dake ja Nai Shikimori-san - 05 (Baha 1920x1080 AVC AAC MP4)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525399.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:ed15fd59774f1dc55e27f14595ff253e117927f6&amp;dn=%5BNC-Raws%5D%20%E5%BC%8F%E5%AE%88%E5%90%8C%E5%AD%B8%E4%B8%8D%E5%8F%AA%E5%8F%AF%E6%84%9B%E8%80%8C%E5%B7%B2%20%2F%20Kawaii%20dake%20ja%20Nai%20Shikimori-san%20-%2005%20%28Baha%201920x1080%20AVC%20AAC%20MP4%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">416.5 MiB</td>
+				<td class="text-center" data-timestamp="1651944738">2022-05-07 17:32</td>
+
+				<td class="text-center">67</td>
+				<td class="text-center">97</td>
+				<td class="text-center">52</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525398" title="Kawaii dake ja Nai Shikimori-san - 05 - 1080p WEB H.264 -NanDesuKa (B-Global).mkv">Kawaii dake ja Nai Shikimori-san - 05 - 1080p WEB H.264 -NanDesuKa (B-Global).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525398.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:5a00680c697965fb535ea487878c0dd4a5c70a87&amp;dn=Kawaii%20dake%20ja%20Nai%20Shikimori-san%20-%2005%20-%201080p%20WEB%20H.264%20-NanDesuKa%20%28B-Global%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.0 GiB</td>
+				<td class="text-center" data-timestamp="1651944718">2022-05-07 17:31</td>
+
+				<td class="text-center">230</td>
+				<td class="text-center">114</td>
+				<td class="text-center">190</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525397" title="Kawaii dake ja Nai Shikimori-san - 05 - 2160p WEB H.264 -NanDesuKa (B-Global).mkv">Kawaii dake ja Nai Shikimori-san - 05 - 2160p WEB H.264 -NanDesuKa (B-Global).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525397.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:d4d3afefceeee45d5bffaf2a74d4455dbdcbe731&amp;dn=Kawaii%20dake%20ja%20Nai%20Shikimori-san%20-%2005%20-%202160p%20WEB%20H.264%20-NanDesuKa%20%28B-Global%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.3 GiB</td>
+				<td class="text-center" data-timestamp="1651944714">2022-05-07 17:31</td>
+
+				<td class="text-center">34</td>
+				<td class="text-center">18</td>
+				<td class="text-center">24</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525396" title="Kawaii dake ja Nai Shikimori-san - 05 - 1080p WEB HEVC -NanDesuKa (B-Global).mkv">Kawaii dake ja Nai Shikimori-san - 05 - 1080p WEB HEVC -NanDesuKa (B-Global).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525396.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:e7131cb081e0a30ad1ea0f1a768ffeee992a7ead&amp;dn=Kawaii%20dake%20ja%20Nai%20Shikimori-san%20-%2005%20-%201080p%20WEB%20HEVC%20-NanDesuKa%20%28B-Global%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">639.3 MiB</td>
+				<td class="text-center" data-timestamp="1651944710">2022-05-07 17:31</td>
+
+				<td class="text-center">41</td>
+				<td class="text-center">33</td>
+				<td class="text-center">40</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525395" title="Kawaii dake ja Nai Shikimori-san - 05 - 2160p WEB HEVC -NanDesuKa (B-Global).mkv">Kawaii dake ja Nai Shikimori-san - 05 - 2160p WEB HEVC -NanDesuKa (B-Global).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525395.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:f37095161ac916cd90aa02c8336306c1dcf2ed70&amp;dn=Kawaii%20dake%20ja%20Nai%20Shikimori-san%20-%2005%20-%202160p%20WEB%20HEVC%20-NanDesuKa%20%28B-Global%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">690.2 MiB</td>
+				<td class="text-center" data-timestamp="1651944707">2022-05-07 17:31</td>
+
+				<td class="text-center">22</td>
+				<td class="text-center">11</td>
+				<td class="text-center">13</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525394" title="[NC-Raws] 式守同学不只可爱而已 / Kawaii dake ja Nai Shikimori-san - 05 (B-Global 3840x2160 HEVC AAC MKV)">[NC-Raws] 式守同学不只可爱而已 / Kawaii dake ja Nai Shikimori-san - 05 (B-Global 3840x2160 HEVC AAC MKV)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525394.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:4c94e3ac57c3ecbbb8ab00bb7de78fdc54c17f9a&amp;dn=%5BNC-Raws%5D%20%E5%BC%8F%E5%AE%88%E5%90%8C%E5%AD%A6%E4%B8%8D%E5%8F%AA%E5%8F%AF%E7%88%B1%E8%80%8C%E5%B7%B2%20%2F%20Kawaii%20dake%20ja%20Nai%20Shikimori-san%20-%2005%20%28B-Global%203840x2160%20HEVC%20AAC%20MKV%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">690.1 MiB</td>
+				<td class="text-center" data-timestamp="1651944657">2022-05-07 17:30</td>
+
+				<td class="text-center">28</td>
+				<td class="text-center">41</td>
+				<td class="text-center">18</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525393#comments" class="comments" title="2 comments">
+						<i class="fa fa-comments-o"></i>2</a>
+					<a href="/view/1525393" title="[Pog42] Mushibugyou (BD 1080p Hi10p FLAC) v0 | Mushibugyo">[Pog42] Mushibugyou (BD 1080p Hi10p FLAC) v0 | Mushibugyo</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525393.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:56ad5f914718d255fb6f216fda03c5916c4a04be&amp;dn=%5BPog42%5D%20Mushibugyou%20%28BD%201080p%20Hi10p%20FLAC%29%20v0%20%7C%20Mushibugyo&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">27.9 GiB</td>
+				<td class="text-center" data-timestamp="1651944611">2022-05-07 17:30</td>
+
+				<td class="text-center">3</td>
+				<td class="text-center">17</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="danger">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525392#comments" class="comments" title="1 comment">
+						<i class="fa fa-comments-o"></i>1</a>
+					<a href="/view/1525392" title="[Judas] Spy x Family - S01E05 [1080p][HEVC x265 10bit][Multi-Subs] (Weekly)">[Judas] Spy x Family - S01E05 [1080p][HEVC x265 10bit][Multi-Subs] (Weekly)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525392.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:6966cd999ab1a5667dd42a43319ce5e682232b0b&amp;dn=%5BJudas%5D%20Spy%20x%20Family%20-%20S01E05%20%5B1080p%5D%5BHEVC%20x265%2010bit%5D%5BMulti-Subs%5D%20%28Weekly%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">368.3 MiB</td>
+				<td class="text-center" data-timestamp="1651944422">2022-05-07 17:27</td>
+
+				<td class="text-center">265</td>
+				<td class="text-center">134</td>
+				<td class="text-center">195</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525391" title="[Anime Chap] Kunoichi Tsubaki no Mune no Uchi S01E05 [WEB 1080p] Improved Subs {OP Lyrics} - Episode 5 (In the Heart of Kunoichi Tsubaki)">[Anime Chap] Kunoichi Tsubaki no Mune no Uchi S01E05 [WEB 1080p] Improved Subs {OP Lyrics} - Episode 5 (In the Heart of Kunoichi Tsubaki)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525391.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:230a93121d5bd4b63520622b563c3f1f58c354f3&amp;dn=%5BAnime%20Chap%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20S01E05%20%5BWEB%201080p%5D%20Improved%20Subs%20%7BOP%20Lyrics%7D%20-%20Episode%205%20%28In%20the%20Heart%20of%20Kunoichi%20Tsubaki%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.3 GiB</td>
+				<td class="text-center" data-timestamp="1651944176">2022-05-07 17:22</td>
+
+				<td class="text-center">1</td>
+				<td class="text-center">20</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="danger">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525390" title="[ASW] Kunoichi Tsubaki no Mune no Uchi - 05 [1080p HEVC x265 10Bit][AAC]">[ASW] Kunoichi Tsubaki no Mune no Uchi - 05 [1080p HEVC x265 10Bit][AAC]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525390.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:890b910a348734043970b85765473123e487c8d5&amp;dn=%5BASW%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20%5B1080p%20HEVC%20x265%2010Bit%5D%5BAAC%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">360.8 MiB</td>
+				<td class="text-center" data-timestamp="1651944118">2022-05-07 17:21</td>
+
+				<td class="text-center">145</td>
+				<td class="text-center">68</td>
+				<td class="text-center">127</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525389" title="【极影字幕社+辉夜汉化组】辉夜大小姐想让我告白 究极浪漫 第05集 GB_CN HEVC opus 1080p">【极影字幕社+辉夜汉化组】辉夜大小姐想让我告白 究极浪漫 第05集 GB_CN HEVC opus 1080p</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525389.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:deabaf2e725ec57ac0149390d9ec13b7001fb1d0&amp;dn=%E3%80%90%E6%9E%81%E5%BD%B1%E5%AD%97%E5%B9%95%E7%A4%BE%2B%E8%BE%89%E5%A4%9C%E6%B1%89%E5%8C%96%E7%BB%84%E3%80%91%E8%BE%89%E5%A4%9C%E5%A4%A7%E5%B0%8F%E5%A7%90%E6%83%B3%E8%AE%A9%E6%88%91%E5%91%8A%E7%99%BD%20%E7%A9%B6%E6%9E%81%E6%B5%AA%E6%BC%AB%20%E7%AC%AC05%E9%9B%86%20GB_CN%20HEVC%20opus%201080p&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">420.1 MiB</td>
+				<td class="text-center" data-timestamp="1651944115">2022-05-07 17:21</td>
+
+				<td class="text-center">59</td>
+				<td class="text-center">69</td>
+				<td class="text-center">39</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525388" title="[NH] Aharen-san wa Hakarenai - S01E04 (WEB 1080p x264 AAC) [Dual-Audio] | Aharen Is Indecipherable">[NH] Aharen-san wa Hakarenai - S01E04 (WEB 1080p x264 AAC) [Dual-Audio] | Aharen Is Indecipherable</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525388.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:214b79c13dcb0f7bcd5ae19b8ad1529e448abbc7&amp;dn=%5BNH%5D%20Aharen-san%20wa%20Hakarenai%20-%20S01E04%20%28WEB%201080p%20x264%20AAC%29%20%5BDual-Audio%5D%20%7C%20Aharen%20Is%20Indecipherable&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.4 GiB</td>
+				<td class="text-center" data-timestamp="1651944107">2022-05-07 17:21</td>
+
+				<td class="text-center">53</td>
+				<td class="text-center">32</td>
+				<td class="text-center">48</td>
+			</tr>
+			<tr class="danger">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525387" title="[YuiSubs] Kunoichi Tsubaki no Mune no Uchi - 05  (x265 H.265 1080p)">[YuiSubs] Kunoichi Tsubaki no Mune no Uchi - 05  (x265 H.265 1080p)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525387.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:1c8b9fabefd4ab9718642252962a3c733169384c&amp;dn=%5BYuiSubs%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20%20%28x265%20H.265%201080p%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">452.9 MiB</td>
+				<td class="text-center" data-timestamp="1651943346">2022-05-07 17:09</td>
+
+				<td class="text-center">20</td>
+				<td class="text-center">9</td>
+				<td class="text-center">15</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=3_3" title="Literature - Raw">
+						<img src="/static/img/icons/nyaa/3_3.png" alt="Literature - Raw" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525386" title="神無き世界のカミサマ活動 第01-05巻 [Kami Naki Sekai no Kamisama Katsudo vol 01-05]">神無き世界のカミサマ活動 第01-05巻 [Kami Naki Sekai no Kamisama Katsudo vol 01-05]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525386.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:60ab22f8b7a20a8b4d490cbe09ad8b444b7788e0&amp;dn=%E7%A5%9E%E7%84%A1%E3%81%8D%E4%B8%96%E7%95%8C%E3%81%AE%E3%82%AB%E3%83%9F%E3%82%B5%E3%83%9E%E6%B4%BB%E5%8B%95%20%E7%AC%AC01-05%E5%B7%BB%20%5BKami%20Naki%20Sekai%20no%20Kamisama%20Katsudo%20vol%2001-05%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">492.9 MiB</td>
+				<td class="text-center" data-timestamp="1651943303">2022-05-07 17:08</td>
+
+				<td class="text-center">105</td>
+				<td class="text-center">81</td>
+				<td class="text-center">120</td>
+			</tr>
+			<tr class="danger">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525385" title="[ASW] Gunjou no Fanfare - 06 [1080p HEVC x265 10Bit][AAC]">[ASW] Gunjou no Fanfare - 06 [1080p HEVC x265 10Bit][AAC]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525385.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:7f0ce97a8acb273985992c411363a41ce78935f2&amp;dn=%5BASW%5D%20Gunjou%20no%20Fanfare%20-%2006%20%5B1080p%20HEVC%20x265%2010Bit%5D%5BAAC%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">310.8 MiB</td>
+				<td class="text-center" data-timestamp="1651943065">2022-05-07 17:04</td>
+
+				<td class="text-center">57</td>
+				<td class="text-center">14</td>
+				<td class="text-center">68</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=4_3" title="Live Action - Non-English-translated">
+						<img src="/static/img/icons/nyaa/4_3.png" alt="Live Action - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525384" title="じんべえ (1998)">じんべえ (1998)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525384.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:0d1fb9535f54783393bf8e38d9bde2cb95650d9a&amp;dn=%E3%81%98%E3%82%93%E3%81%B9%E3%81%88%20%281998%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">3.9 GiB</td>
+				<td class="text-center" data-timestamp="1651942591">2022-05-07 16:56</td>
+
+				<td class="text-center">5</td>
+				<td class="text-center">11</td>
+				<td class="text-center">1</td>
+			</tr>
+			<tr class="danger">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525383" title="Haikyuu!!.S03.1080p.BluRay.H264.AAC-STARZ">Haikyuu!!.S03.1080p.BluRay.H264.AAC-STARZ</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525383.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:99da81e1f4abe6bd5ca08d372b6e3f753933c7a5&amp;dn=Haikyuu%21%21.S03.1080p.BluRay.H264.AAC-STARZ&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">4.5 GiB</td>
+				<td class="text-center" data-timestamp="1651942237">2022-05-07 16:50</td>
+
+				<td class="text-center">1</td>
+				<td class="text-center">23</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="danger">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525382" title="Haikyuu!!.S02.1080p.BluRay.H264.AAC-STARZ">Haikyuu!!.S02.1080p.BluRay.H264.AAC-STARZ</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525382.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:0e97a96e748d06bfbe291be4da558ac12326d625&amp;dn=Haikyuu%21%21.S02.1080p.BluRay.H264.AAC-STARZ&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">11.1 GiB</td>
+				<td class="text-center" data-timestamp="1651942204">2022-05-07 16:50</td>
+
+				<td class="text-center">1</td>
+				<td class="text-center">15</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="danger">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525381" title="Haikyuu!!.Land.vs.Air.1080p.BluRay.H264.AAC-STARZ">Haikyuu!!.Land.vs.Air.1080p.BluRay.H264.AAC-STARZ</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525381.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:df46c35768356ece33f12738ae802d25ba9610f0&amp;dn=Haikyuu%21%21.Land.vs.Air.1080p.BluRay.H264.AAC-STARZ&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">858.9 MiB</td>
+				<td class="text-center" data-timestamp="1651942177">2022-05-07 16:49</td>
+
+				<td class="text-center">2</td>
+				<td class="text-center">8</td>
+				<td class="text-center">1</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525380" title="[Anime Chap] Spy x Family S01E05 [WEB 1080p] Improved Subs {OP &amp; ED Lyrics} - Episode 5">[Anime Chap] Spy x Family S01E05 [WEB 1080p] Improved Subs {OP &amp; ED Lyrics} - Episode 5</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525380.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:fcc7a4a5a2fb34ac4f51d1bb098def6a2f21c8f5&amp;dn=%5BAnime%20Chap%5D%20Spy%20x%20Family%20S01E05%20%5BWEB%201080p%5D%20Improved%20Subs%20%7BOP%20%26%20ED%20Lyrics%7D%20-%20Episode%205&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.4 GiB</td>
+				<td class="text-center" data-timestamp="1651942081">2022-05-07 16:48</td>
+
+				<td class="text-center">2</td>
+				<td class="text-center">88</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525379" title="Kunoichi Tsubaki no Mune no Uchi - S01E05 - VOSTFR 1080p WEB x264 -NanDesuKa (ADN).mkv">Kunoichi Tsubaki no Mune no Uchi - S01E05 - VOSTFR 1080p WEB x264 -NanDesuKa (ADN).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525379.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:e74086adfbd3095b6ce0605ac3f93b1e5746dfd3&amp;dn=Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%20S01E05%20-%20VOSTFR%201080p%20WEB%20x264%20-NanDesuKa%20%28ADN%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">549.7 MiB</td>
+				<td class="text-center" data-timestamp="1651942033">2022-05-07 16:47</td>
+
+				<td class="text-center">25</td>
+				<td class="text-center">3</td>
+				<td class="text-center">21</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525378" title="Kunoichi Tsubaki no Mune no Uchi - S01E05 - VOSTFR 720p WEB x264 -NanDesuKa (ADN).mkv">Kunoichi Tsubaki no Mune no Uchi - S01E05 - VOSTFR 720p WEB x264 -NanDesuKa (ADN).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525378.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:80d3baad852a64aad828acb4e58ed81a66301618&amp;dn=Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%20S01E05%20-%20VOSTFR%20720p%20WEB%20x264%20-NanDesuKa%20%28ADN%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">292.1 MiB</td>
+				<td class="text-center" data-timestamp="1651942027">2022-05-07 16:47</td>
+
+				<td class="text-center">5</td>
+				<td class="text-center">3</td>
+				<td class="text-center">5</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525377" title="[ANi]  Love Live！虹咲學園 學園偶像同好會 第二季 - 06 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]">[ANi]  Love Live！虹咲學園 學園偶像同好會 第二季 - 06 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525377.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:14af5b278e2d025a5366a1ae2ad6a24fba773d7c&amp;dn=%5BANi%5D%20%20Love%20Live%EF%BC%81%E8%99%B9%E5%92%B2%E5%AD%B8%E5%9C%92%20%E5%AD%B8%E5%9C%92%E5%81%B6%E5%83%8F%E5%90%8C%E5%A5%BD%E6%9C%83%20%E7%AC%AC%E4%BA%8C%E5%AD%A3%20-%2006%20%5B1080P%5D%5BBaha%5D%5BWEB-DL%5D%5BAAC%20AVC%5D%5BCHT%5D%5BMP4%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">448.7 MiB</td>
+				<td class="text-center" data-timestamp="1651942025">2022-05-07 16:47</td>
+
+				<td class="text-center">28</td>
+				<td class="text-center">18</td>
+				<td class="text-center">27</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525376" title="Kunoichi Tsubaki no Mune no Uchi - S01E05 - VOSTFR 480p WEB x264 -NanDesuKa (ADN).mkv">Kunoichi Tsubaki no Mune no Uchi - S01E05 - VOSTFR 480p WEB x264 -NanDesuKa (ADN).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525376.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:856814123efd220bc579ab5a44f0340e91570fcd&amp;dn=Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%20S01E05%20-%20VOSTFR%20480p%20WEB%20x264%20-NanDesuKa%20%28ADN%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">118.4 MiB</td>
+				<td class="text-center" data-timestamp="1651942023">2022-05-07 16:47</td>
+
+				<td class="text-center">2</td>
+				<td class="text-center">0</td>
+				<td class="text-center">2</td>
+			</tr>
+			<tr class="success">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525375" title="[PuyaSubs!] Kunoichi Tsubaki no Mune no Uchi - 05 [ESP-ENG][720p][56AAA646].mkv">[PuyaSubs!] Kunoichi Tsubaki no Mune no Uchi - 05 [ESP-ENG][720p][56AAA646].mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525375.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:5141542f858f9f549a2d7fc799f2b6cc9e37e71e&amp;dn=%5BPuyaSubs%21%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20%5BESP-ENG%5D%5B720p%5D%5B56AAA646%5D.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">696.7 MiB</td>
+				<td class="text-center" data-timestamp="1651941987">2022-05-07 16:46</td>
+
+				<td class="text-center">15</td>
+				<td class="text-center">13</td>
+				<td class="text-center">11</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525374#comments" class="comments" title="1 comment">
+						<i class="fa fa-comments-o"></i>1</a>
+					<a href="/view/1525374" title="[UQW] World Trigger 2nd Season [BDRip 1080p HEVC-YUV420P10 FLAC]">[UQW] World Trigger 2nd Season [BDRip 1080p HEVC-YUV420P10 FLAC]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525374.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:d9bc11c7f0a8a20da704ea0a3c1c7adbdc0f011e&amp;dn=%5BUQW%5D%20World%20Trigger%202nd%20Season%20%5BBDRip%201080p%20HEVC-YUV420P10%20FLAC%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">31.4 GiB</td>
+				<td class="text-center" data-timestamp="1651941960">2022-05-07 16:46</td>
+
+				<td class="text-center">1</td>
+				<td class="text-center">17</td>
+				<td class="text-center">1</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525373" title="[UQW] World Trigger [BDRip 1080p HEVC-YUV420P10 FLAC]">[UQW] World Trigger [BDRip 1080p HEVC-YUV420P10 FLAC]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525373.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:5c2778aa445660ac21d541998294f60d6aa73f20&amp;dn=%5BUQW%5D%20World%20Trigger%20%5BBDRip%201080p%20HEVC-YUV420P10%20FLAC%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">192.9 GiB</td>
+				<td class="text-center" data-timestamp="1651941958">2022-05-07 16:45</td>
+
+				<td class="text-center">8</td>
+				<td class="text-center">16</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="success">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525372" title="[PuyaSubs!] Kunoichi Tsubaki no Mune no Uchi - 05 [ESP-ENG][1080p][43B517AB].mkv">[PuyaSubs!] Kunoichi Tsubaki no Mune no Uchi - 05 [ESP-ENG][1080p][43B517AB].mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525372.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:be97285f526e3dbc83d58526a2c910a41e6fb2e0&amp;dn=%5BPuyaSubs%21%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20%5BESP-ENG%5D%5B1080p%5D%5B43B517AB%5D.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.3 GiB</td>
+				<td class="text-center" data-timestamp="1651941926">2022-05-07 16:45</td>
+
+				<td class="text-center">30</td>
+				<td class="text-center">17</td>
+				<td class="text-center">26</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525371" title="[ANi] In the Heart of Kunoichi Tsubaki -  女忍者椿的心事 - 05 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]">[ANi] In the Heart of Kunoichi Tsubaki -  女忍者椿的心事 - 05 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525371.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:ffae9b4417e187a280e3e53252475bf87bf54e6d&amp;dn=%5BANi%5D%20In%20the%20Heart%20of%20Kunoichi%20Tsubaki%20-%20%20%E5%A5%B3%E5%BF%8D%E8%80%85%E6%A4%BF%E7%9A%84%E5%BF%83%E4%BA%8B%20-%2005%20%5B1080P%5D%5BBaha%5D%5BWEB-DL%5D%5BAAC%20AVC%5D%5BCHT%5D%5BMP4%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">514.9 MiB</td>
+				<td class="text-center" data-timestamp="1651941907">2022-05-07 16:45</td>
+
+				<td class="text-center">35</td>
+				<td class="text-center">19</td>
+				<td class="text-center">47</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525370" title="[ANi] A Couple of Cuckoos -  杜鵑婚約 - 03 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]">[ANi] A Couple of Cuckoos -  杜鵑婚約 - 03 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525370.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:1e64ad312dcbb2a5ed6f6e10db70e661c66471e8&amp;dn=%5BANi%5D%20A%20Couple%20of%20Cuckoos%20-%20%20%E6%9D%9C%E9%B5%91%E5%A9%9A%E7%B4%84%20-%2003%20%5B1080P%5D%5BBaha%5D%5BWEB-DL%5D%5BAAC%20AVC%5D%5BCHT%5D%5BMP4%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">498.4 MiB</td>
+				<td class="text-center" data-timestamp="1651941835">2022-05-07 16:43</td>
+
+				<td class="text-center">57</td>
+				<td class="text-center">37</td>
+				<td class="text-center">54</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525369" title="[Tsundere-Raws] Kunoichi Tsubaki no Mune no Uchi - 05 VOSTFR (CR) [WEB 1080p x264 AAC].mp4">[Tsundere-Raws] Kunoichi Tsubaki no Mune no Uchi - 05 VOSTFR (CR) [WEB 1080p x264 AAC].mp4</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525369.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:65c263b6dd03514482d80d3cc97a00f4837774cd&amp;dn=%5BTsundere-Raws%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20VOSTFR%20%28CR%29%20%5BWEB%201080p%20x264%20AAC%5D.mp4&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.3 GiB</td>
+				<td class="text-center" data-timestamp="1651941798">2022-05-07 16:43</td>
+
+				<td class="text-center">7</td>
+				<td class="text-center">1</td>
+				<td class="text-center">8</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525368" title="[Tsundere-Raws] Kunoichi Tsubaki no Mune no Uchi - 05 VOSTFR (CR) [WEB 720p x264 AAC].mp4">[Tsundere-Raws] Kunoichi Tsubaki no Mune no Uchi - 05 VOSTFR (CR) [WEB 720p x264 AAC].mp4</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525368.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:1a42aa0d7e6b5f9dbc6105561fa66aa337e7ff5b&amp;dn=%5BTsundere-Raws%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20VOSTFR%20%28CR%29%20%5BWEB%20720p%20x264%20AAC%5D.mp4&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">697.2 MiB</td>
+				<td class="text-center" data-timestamp="1651941751">2022-05-07 16:42</td>
+
+				<td class="text-center">7</td>
+				<td class="text-center">4</td>
+				<td class="text-center">5</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525367" title="[Tsundere-Raws] Kunoichi Tsubaki no Mune no Uchi - 05 VOSTFR (CR) [WEB 1080p x264 AAC].mkv">[Tsundere-Raws] Kunoichi Tsubaki no Mune no Uchi - 05 VOSTFR (CR) [WEB 1080p x264 AAC].mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525367.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:f24cb54d004db6bf19403e9d0983abd6d6e858bd&amp;dn=%5BTsundere-Raws%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20VOSTFR%20%28CR%29%20%5BWEB%201080p%20x264%20AAC%5D.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.4 GiB</td>
+				<td class="text-center" data-timestamp="1651941717">2022-05-07 16:41</td>
+
+				<td class="text-center">11</td>
+				<td class="text-center">3</td>
+				<td class="text-center">9</td>
+			</tr>
+			<tr class="danger">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525366" title="[YuiSubs] Gunjou no Fanfare - 06  (x265 H.265 1080p)">[YuiSubs] Gunjou no Fanfare - 06  (x265 H.265 1080p)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525366.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:ff50488f48d6cdf7b719486a89cd899761986107&amp;dn=%5BYuiSubs%5D%20Gunjou%20no%20Fanfare%20-%2006%20%20%28x265%20H.265%201080p%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">371.9 MiB</td>
+				<td class="text-center" data-timestamp="1651941680">2022-05-07 16:41</td>
+
+				<td class="text-center">10</td>
+				<td class="text-center">2</td>
+				<td class="text-center">10</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525365" title="[Tsundere-Raws] Kunoichi Tsubaki no Mune no Uchi - 05 VOSTFR (CR) [WEB 720p x264 AAC].mkv">[Tsundere-Raws] Kunoichi Tsubaki no Mune no Uchi - 05 VOSTFR (CR) [WEB 720p x264 AAC].mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525365.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:a9c97205af6865818f23b3fcf8aea3fcb65303be&amp;dn=%5BTsundere-Raws%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20VOSTFR%20%28CR%29%20%5BWEB%20720p%20x264%20AAC%5D.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">720.3 MiB</td>
+				<td class="text-center" data-timestamp="1651941645">2022-05-07 16:40</td>
+
+				<td class="text-center">3</td>
+				<td class="text-center">2</td>
+				<td class="text-center">4</td>
+			</tr>
+			<tr class="success">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525364#comments" class="comments" title="3 comments">
+						<i class="fa fa-comments-o"></i>3</a>
+					<a href="/view/1525364" title="[DmonHiro] All Purpose Cultural Cat Girl Nuku Nuku OVA (DVD Remux, Japanese Audio Only)">[DmonHiro] All Purpose Cultural Cat Girl Nuku Nuku OVA (DVD Remux, Japanese Audio Only)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525364.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:4cb2f8cbec3d36649e5720dc9f0b8573c5d9fe58&amp;dn=%5BDmonHiro%5D%20All%20Purpose%20Cultural%20Cat%20Girl%20Nuku%20Nuku%20OVA%20%28DVD%20Remux%2C%20Japanese%20Audio%20Only%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">6.7 GiB</td>
+				<td class="text-center" data-timestamp="1651941498">2022-05-07 16:38</td>
+
+				<td class="text-center">0</td>
+				<td class="text-center">58</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525363" title="[Sadame no Fansub] Mobile Suit Gundam Twilight AXIS [720p][AAC][Sub ITA] (Softsub)">[Sadame no Fansub] Mobile Suit Gundam Twilight AXIS [720p][AAC][Sub ITA] (Softsub)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525363.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:65f074e6276af8a9d40a8014eafb4c0502daab62&amp;dn=%5BSadame%20no%20Fansub%5D%20Mobile%20Suit%20Gundam%20Twilight%20AXIS%20%5B720p%5D%5BAAC%5D%5BSub%20ITA%5D%20%28Softsub%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">702.7 MiB</td>
+				<td class="text-center" data-timestamp="1651941415">2022-05-07 16:36</td>
+
+				<td class="text-center">1</td>
+				<td class="text-center">11</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525362" title="[Sadame no Fansub] Mobile Suit Gundam Twilight AXIS [720p][AAC][Sub ITA] (Hardsub)">[Sadame no Fansub] Mobile Suit Gundam Twilight AXIS [720p][AAC][Sub ITA] (Hardsub)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525362.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:5163546d4945e53cc3e0f685b361a1047f452fae&amp;dn=%5BSadame%20no%20Fansub%5D%20Mobile%20Suit%20Gundam%20Twilight%20AXIS%20%5B720p%5D%5BAAC%5D%5BSub%20ITA%5D%20%28Hardsub%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">712.2 MiB</td>
+				<td class="text-center" data-timestamp="1651941413">2022-05-07 16:36</td>
+
+				<td class="text-center">0</td>
+				<td class="text-center">7</td>
+				<td class="text-center">0</td>
+			</tr>
+			<tr class="danger">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525359" title="[ASW] Spy x Family - 05 [1080p HEVC x265 10Bit][AAC]">[ASW] Spy x Family - 05 [1080p HEVC x265 10Bit][AAC]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525359.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:9f3d42222712cd747f1046ad2c4d536cb3c80941&amp;dn=%5BASW%5D%20Spy%20x%20Family%20-%2005%20%5B1080p%20HEVC%20x265%2010Bit%5D%5BAAC%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">371.4 MiB</td>
+				<td class="text-center" data-timestamp="1651941347">2022-05-07 16:35</td>
+
+				<td class="text-center">688</td>
+				<td class="text-center">212</td>
+				<td class="text-center">718</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=4_4" title="Live Action - Raw">
+						<img src="/static/img/icons/nyaa/4_4.png" alt="Live Action - Raw" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525358" title="[NEWS RAWS] Kaseifu no Mitazono 5 EP03 [1080p] [WEB-DL]">[NEWS RAWS] Kaseifu no Mitazono 5 EP03 [1080p] [WEB-DL]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525358.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:691ea77095cebc8932008467941b0fa7251c8e66&amp;dn=%5BNEWS%20RAWS%5D%20Kaseifu%20no%20Mitazono%205%20EP03%20%5B1080p%5D%20%5BWEB-DL%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">948.3 MiB</td>
+				<td class="text-center" data-timestamp="1651941304">2022-05-07 16:35</td>
+
+				<td class="text-center">15</td>
+				<td class="text-center">10</td>
+				<td class="text-center">5</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=4_4" title="Live Action - Raw">
+						<img src="/static/img/icons/nyaa/4_4.png" alt="Live Action - Raw" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525357" title="[NEWS RAWS] Ore no Kawaii wa Mousugu Shohikigen！？EP04 [1080p] [WEB-DL]">[NEWS RAWS] Ore no Kawaii wa Mousugu Shohikigen！？EP04 [1080p] [WEB-DL]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525357.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:5399d13260d8bc26d1c071cddadbfc7159443a88&amp;dn=%5BNEWS%20RAWS%5D%20Ore%20no%20Kawaii%20wa%20Mousugu%20Shohikigen%EF%BC%81%EF%BC%9FEP04%20%5B1080p%5D%20%5BWEB-DL%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">446.3 MiB</td>
+				<td class="text-center" data-timestamp="1651941302">2022-05-07 16:35</td>
+
+				<td class="text-center">19</td>
+				<td class="text-center">10</td>
+				<td class="text-center">11</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=4_4" title="Live Action - Raw">
+						<img src="/static/img/icons/nyaa/4_4.png" alt="Live Action - Raw" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525356" title="[NEWS RAWS] NEWS no Zenryoku!! Making (2022-05-06) [720p] [WEB-DL]">[NEWS RAWS] NEWS no Zenryoku!! Making (2022-05-06) [720p] [WEB-DL]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525356.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:d41089c0d9c5563e7bdf85ae311a52e0716be76e&amp;dn=%5BNEWS%20RAWS%5D%20NEWS%20no%20Zenryoku%21%21%20Making%20%282022-05-06%29%20%5B720p%5D%20%5BWEB-DL%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">481.3 MiB</td>
+				<td class="text-center" data-timestamp="1651941300">2022-05-07 16:35</td>
+
+				<td class="text-center">1</td>
+				<td class="text-center">5</td>
+				<td class="text-center">2</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525355" title="[DJB] In the Heart of Kunoichi Tsubaki - 05 VOSTFR [1080p].mp4">[DJB] In the Heart of Kunoichi Tsubaki - 05 VOSTFR [1080p].mp4</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525355.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:b7c89e4df6c911590ed9d847bb109c038a8aac29&amp;dn=%5BDJB%5D%20In%20the%20Heart%20of%20Kunoichi%20Tsubaki%20-%2005%20VOSTFR%20%5B1080p%5D.mp4&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.3 GiB</td>
+				<td class="text-center" data-timestamp="1651941295">2022-05-07 16:34</td>
+
+				<td class="text-center">16</td>
+				<td class="text-center">5</td>
+				<td class="text-center">11</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525353" title="[Lilith-Raws x WitEx.io] 女忍者椿的心事 / Kunoichi Tsubaki no Mune no Uchi - 05 [Baha][WEB-DL][1080p][AVC AAC][CHT][MP4]">[Lilith-Raws x WitEx.io] 女忍者椿的心事 / Kunoichi Tsubaki no Mune no Uchi - 05 [Baha][WEB-DL][1080p][AVC AAC][CHT][MP4]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525353.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:be06bade3b0432d0476f672f88ebba9dd144e6ff&amp;dn=%5BLilith-Raws%20x%20WitEx.io%5D%20%E5%A5%B3%E5%BF%8D%E8%80%85%E6%A4%BF%E7%9A%84%E5%BF%83%E4%BA%8B%20%2F%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20%5BBaha%5D%5BWEB-DL%5D%5B1080p%5D%5BAVC%20AAC%5D%5BCHT%5D%5BMP4%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">514.5 MiB</td>
+				<td class="text-center" data-timestamp="1651941274">2022-05-07 16:34</td>
+
+				<td class="text-center">131</td>
+				<td class="text-center">58</td>
+				<td class="text-center">142</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525352" title="[Lilith-Raws x WitEx.io] 杜鵑婚約 / Kakkou no Iinazuke - 03 [Baha][WEB-DL][1080p][AVC AAC][CHT][MP4]">[Lilith-Raws x WitEx.io] 杜鵑婚約 / Kakkou no Iinazuke - 03 [Baha][WEB-DL][1080p][AVC AAC][CHT][MP4]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525352.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:cd588909a8fd191442821f0884e8a59df4432553&amp;dn=%5BLilith-Raws%20x%20WitEx.io%5D%20%E6%9D%9C%E9%B5%91%E5%A9%9A%E7%B4%84%20%2F%20Kakkou%20no%20Iinazuke%20-%2003%20%5BBaha%5D%5BWEB-DL%5D%5B1080p%5D%5BAVC%20AAC%5D%5BCHT%5D%5BMP4%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">498.1 MiB</td>
+				<td class="text-center" data-timestamp="1651941264">2022-05-07 16:34</td>
+
+				<td class="text-center">149</td>
+				<td class="text-center">80</td>
+				<td class="text-center">172</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525351" title="[CameEsp] Kunoichi Tsubaki no Mune no Uchi - 05 [ESP-es y ENG] (720p)">[CameEsp] Kunoichi Tsubaki no Mune no Uchi - 05 [ESP-es y ENG] (720p)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525351.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:0d2fd93c0af563a3a656ebe7bacec99bf3d553fd&amp;dn=%5BCameEsp%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20%5BESP-es%20y%20ENG%5D%20%28720p%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">702.1 MiB</td>
+				<td class="text-center" data-timestamp="1651941248">2022-05-07 16:34</td>
+
+				<td class="text-center">4</td>
+				<td class="text-center">2</td>
+				<td class="text-center">5</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525350" title="[CameEsp] Kunoichi Tsubaki no Mune no Uchi - 05 [ESP-es y ENG] (1080p)">[CameEsp] Kunoichi Tsubaki no Mune no Uchi - 05 [ESP-es y ENG] (1080p)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525350.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:ac6fb4d16d02f3f09e0a50180558f78aa37cdefc&amp;dn=%5BCameEsp%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20%5BESP-es%20y%20ENG%5D%20%281080p%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.3 GiB</td>
+				<td class="text-center" data-timestamp="1651941247">2022-05-07 16:34</td>
+
+				<td class="text-center">9</td>
+				<td class="text-center">5</td>
+				<td class="text-center">10</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525349" title="[Lilith-Raws x WitEx.io] 群青的開幕曲 / Gunjou no Fanfare - 06 [Baha][WEB-DL][1080p][AVC AAC][CHT][MP4]">[Lilith-Raws x WitEx.io] 群青的開幕曲 / Gunjou no Fanfare - 06 [Baha][WEB-DL][1080p][AVC AAC][CHT][MP4]</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525349.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:17b322898b1fe9d13c37daf23683fddc50b78714&amp;dn=%5BLilith-Raws%20x%20WitEx.io%5D%20%E7%BE%A4%E9%9D%92%E7%9A%84%E9%96%8B%E5%B9%95%E6%9B%B2%20%2F%20Gunjou%20no%20Fanfare%20-%2006%20%5BBaha%5D%5BWEB-DL%5D%5B1080p%5D%5BAVC%20AAC%5D%5BCHT%5D%5BMP4%5D&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">546.4 MiB</td>
+				<td class="text-center" data-timestamp="1651941218">2022-05-07 16:33</td>
+
+				<td class="text-center">50</td>
+				<td class="text-center">28</td>
+				<td class="text-center">52</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525348" title="Kunoichi Tsubaki no Mune no Uchi - S01E05 - 1080p WEB x264 -NanDesuKa (CR).mkv">Kunoichi Tsubaki no Mune no Uchi - S01E05 - 1080p WEB x264 -NanDesuKa (CR).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525348.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:8467477a9afed0352bdbe13a16f533498aea61f1&amp;dn=Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%20S01E05%20-%201080p%20WEB%20x264%20-NanDesuKa%20%28CR%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.3 GiB</td>
+				<td class="text-center" data-timestamp="1651941171">2022-05-07 16:32</td>
+
+				<td class="text-center">50</td>
+				<td class="text-center">7</td>
+				<td class="text-center">66</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525347" title="Kunoichi Tsubaki no Mune no Uchi - S01E05 - 720p WEB x264 -NanDesuKa (CR).mkv">Kunoichi Tsubaki no Mune no Uchi - S01E05 - 720p WEB x264 -NanDesuKa (CR).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525347.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:a7722c844a23379e4ae29f14ce2095150be0aa51&amp;dn=Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%20S01E05%20-%20720p%20WEB%20x264%20-NanDesuKa%20%28CR%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">698.6 MiB</td>
+				<td class="text-center" data-timestamp="1651941166">2022-05-07 16:32</td>
+
+				<td class="text-center">9</td>
+				<td class="text-center">6</td>
+				<td class="text-center">12</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525346" title="[NC-Raws] 女忍者椿的心事 / Kunoichi Tsubaki no Mune no Uchi - 05 (Baha 1920x1080 AVC AAC MP4)">[NC-Raws] 女忍者椿的心事 / Kunoichi Tsubaki no Mune no Uchi - 05 (Baha 1920x1080 AVC AAC MP4)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525346.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:4392abb2d45ff75c23d893766ed62c7491d68f61&amp;dn=%5BNC-Raws%5D%20%E5%A5%B3%E5%BF%8D%E8%80%85%E6%A4%BF%E7%9A%84%E5%BF%83%E4%BA%8B%20%2F%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20%28Baha%201920x1080%20AVC%20AAC%20MP4%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">514.7 MiB</td>
+				<td class="text-center" data-timestamp="1651941131">2022-05-07 16:32</td>
+
+				<td class="text-center">60</td>
+				<td class="text-center">38</td>
+				<td class="text-center">80</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525345" title="Kakkou no Iinazuke - 03 - 1080p WEB H.264 -NanDesuKa (B-Global).mkv">Kakkou no Iinazuke - 03 - 1080p WEB H.264 -NanDesuKa (B-Global).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525345.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:6bbcd3f9dbe8fbfabf471a52eecd1d91d35b2f2f&amp;dn=Kakkou%20no%20Iinazuke%20-%2003%20-%201080p%20WEB%20H.264%20-NanDesuKa%20%28B-Global%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1014.8 MiB</td>
+				<td class="text-center" data-timestamp="1651941127">2022-05-07 16:32</td>
+
+				<td class="text-center">164</td>
+				<td class="text-center">32</td>
+				<td class="text-center">211</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525344" title="Kakkou no Iinazuke - 03 - 1080p WEB HEVC -NanDesuKa (B-Global).mkv">Kakkou no Iinazuke - 03 - 1080p WEB HEVC -NanDesuKa (B-Global).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525344.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:083377a5989333ead2de3e7c0134ec3d4e1f1eb9&amp;dn=Kakkou%20no%20Iinazuke%20-%2003%20-%201080p%20WEB%20HEVC%20-NanDesuKa%20%28B-Global%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">632.3 MiB</td>
+				<td class="text-center" data-timestamp="1651941122">2022-05-07 16:32</td>
+
+				<td class="text-center">40</td>
+				<td class="text-center">15</td>
+				<td class="text-center">46</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525343" title="Kunoichi Tsubaki no Mune no Uchi - 05 - 1080p WEB H.264 -NanDesuKa (B-Global).mkv">Kunoichi Tsubaki no Mune no Uchi - 05 - 1080p WEB H.264 -NanDesuKa (B-Global).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525343.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:7e8d77185697bf919265c7fa681df99577b3b1db&amp;dn=Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20-%201080p%20WEB%20H.264%20-NanDesuKa%20%28B-Global%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.0 GiB</td>
+				<td class="text-center" data-timestamp="1651941119">2022-05-07 16:31</td>
+
+				<td class="text-center">9</td>
+				<td class="text-center">4</td>
+				<td class="text-center">15</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525342" title="Kunoichi Tsubaki no Mune no Uchi - 05 - 1080p WEB HEVC -NanDesuKa (B-Global).mkv">Kunoichi Tsubaki no Mune no Uchi - 05 - 1080p WEB HEVC -NanDesuKa (B-Global).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525342.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:09cdf808d18e83cbee4cf1ff4daffc1d698479cb&amp;dn=Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20-%201080p%20WEB%20HEVC%20-NanDesuKa%20%28B-Global%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">646.8 MiB</td>
+				<td class="text-center" data-timestamp="1651941115">2022-05-07 16:31</td>
+
+				<td class="text-center">17</td>
+				<td class="text-center">7</td>
+				<td class="text-center">23</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_3" title="Anime - Non-English-translated">
+						<img src="/static/img/icons/nyaa/1_3.png" alt="Anime - Non-English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525341" title="[NC-Raws] 杜鵑婚約 / Kakkou no Iinazuke (A Couple of Cuckoos) - 03 (Baha 1920x1080 AVC AAC MP4)">[NC-Raws] 杜鵑婚約 / Kakkou no Iinazuke (A Couple of Cuckoos) - 03 (Baha 1920x1080 AVC AAC MP4)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525341.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:7aa919fdeddf6d577b73dcd041ed1ba5d0090fdb&amp;dn=%5BNC-Raws%5D%20%E6%9D%9C%E9%B5%91%E5%A9%9A%E7%B4%84%20%2F%20Kakkou%20no%20Iinazuke%20%28A%20Couple%20of%20Cuckoos%29%20-%2003%20%28Baha%201920x1080%20AVC%20AAC%20MP4%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">498.2 MiB</td>
+				<td class="text-center" data-timestamp="1651941111">2022-05-07 16:31</td>
+
+				<td class="text-center">97</td>
+				<td class="text-center">69</td>
+				<td class="text-center">119</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525340" title="Kunoichi Tsubaki no Mune no Uchi - S01E05 - 480p WEB x264 -NanDesuKa (CR).mkv">Kunoichi Tsubaki no Mune no Uchi - S01E05 - 480p WEB x264 -NanDesuKa (CR).mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525340.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:1e7216d5b67edf3d772aa93391a054372867754b&amp;dn=Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%20S01E05%20-%20480p%20WEB%20x264%20-NanDesuKa%20%28CR%29.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">362.0 MiB</td>
+				<td class="text-center" data-timestamp="1651941110">2022-05-07 16:31</td>
+
+				<td class="text-center">3</td>
+				<td class="text-center">1</td>
+				<td class="text-center">6</td>
+			</tr>
+			<tr class="success">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525339#comments" class="comments" title="2 comments">
+						<i class="fa fa-comments-o"></i>2</a>
+					<a href="/view/1525339" title="[SubsPlease] Kunoichi Tsubaki no Mune no Uchi - 05 (1080p) [4255C468].mkv">[SubsPlease] Kunoichi Tsubaki no Mune no Uchi - 05 (1080p) [4255C468].mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525339.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:e3ebe56ba9abb4ae1b64e986e283571a72363854&amp;dn=%5BSubsPlease%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20%281080p%29%20%5B4255C468%5D.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">1.3 GiB</td>
+				<td class="text-center" data-timestamp="1651941091">2022-05-07 16:31</td>
+
+				<td class="text-center">700</td>
+				<td class="text-center">171</td>
+				<td class="text-center">688</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525338" title="[NC-Raws] 杜鹃的婚约 / Kakkou no Iinazuke (A Couple of Cuckoos) - 03 (B-Global 1920x1080 HEVC AAC MKV)">[NC-Raws] 杜鹃的婚约 / Kakkou no Iinazuke (A Couple of Cuckoos) - 03 (B-Global 1920x1080 HEVC AAC MKV)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525338.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:095e48434e901d09697964ae983fd45c118fe2ab&amp;dn=%5BNC-Raws%5D%20%E6%9D%9C%E9%B9%83%E7%9A%84%E5%A9%9A%E7%BA%A6%20%2F%20Kakkou%20no%20Iinazuke%20%28A%20Couple%20of%20Cuckoos%29%20-%2003%20%28B-Global%201920x1080%20HEVC%20AAC%20MKV%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">632.1 MiB</td>
+				<td class="text-center" data-timestamp="1651941089">2022-05-07 16:31</td>
+
+				<td class="text-center">60</td>
+				<td class="text-center">31</td>
+				<td class="text-center">59</td>
+			</tr>
+			<tr class="success">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525335" title="[SubsPlease] Kunoichi Tsubaki no Mune no Uchi - 05 (720p) [562CEC9F].mkv">[SubsPlease] Kunoichi Tsubaki no Mune no Uchi - 05 (720p) [562CEC9F].mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525335.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:1de9693cc51a9f996810e914786177086390776e&amp;dn=%5BSubsPlease%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20%28720p%29%20%5B562CEC9F%5D.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">702.1 MiB</td>
+				<td class="text-center" data-timestamp="1651941064">2022-05-07 16:31</td>
+
+				<td class="text-center">408</td>
+				<td class="text-center">148</td>
+				<td class="text-center">415</td>
+			</tr>
+			<tr class="success">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525334" title="[SubsPlease] Kunoichi Tsubaki no Mune no Uchi - 05 (480p) [EF61D9B4].mkv">[SubsPlease] Kunoichi Tsubaki no Mune no Uchi - 05 (480p) [EF61D9B4].mkv</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525334.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:005e11290f0fe62760d153872b4366a4a3d04098&amp;dn=%5BSubsPlease%5D%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20%28480p%29%20%5BEF61D9B4%5D.mkv&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">360.1 MiB</td>
+				<td class="text-center" data-timestamp="1651941053">2022-05-07 16:30</td>
+
+				<td class="text-center">87</td>
+				<td class="text-center">30</td>
+				<td class="text-center">123</td>
+			</tr>
+			<tr class="default">
+				<td>
+					<a href="/?c=1_2" title="Anime - English-translated">
+						<img src="/static/img/icons/nyaa/1_2.png" alt="Anime - English-translated" class="category-icon">
+					</a>
+				</td>
+				<td colspan="2">
+					<a href="/view/1525333" title="[NC-Raws] 女忍者椿的心事 / Kunoichi Tsubaki no Mune no Uchi - 05 (B-Global 1920x1080 HEVC AAC MKV)">[NC-Raws] 女忍者椿的心事 / Kunoichi Tsubaki no Mune no Uchi - 05 (B-Global 1920x1080 HEVC AAC MKV)</a>
+				</td>
+				<td class="text-center">
+					<a href="/download/1525333.torrent"><i class="fa fa-fw fa-download"></i></a>
+					<a href="magnet:?xt=urn:btih:7a155d0165a47afdad7ec82ec304155fa09ca664&amp;dn=%5BNC-Raws%5D%20%E5%A5%B3%E5%BF%8D%E8%80%85%E6%A4%BF%E7%9A%84%E5%BF%83%E4%BA%8B%20%2F%20Kunoichi%20Tsubaki%20no%20Mune%20no%20Uchi%20-%2005%20%28B-Global%201920x1080%20HEVC%20AAC%20MKV%29&amp;tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"><i class="fa fa-fw fa-magnet"></i></a>
+				</td>
+				<td class="text-center">646.7 MiB</td>
+				<td class="text-center" data-timestamp="1651941049">2022-05-07 16:30</td>
+
+				<td class="text-center">26</td>
+				<td class="text-center">17</td>
+				<td class="text-center">31</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="center">
+	<nav>
+  <ul class="pagination">
+    <li class="disabled"><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+        <li><a href="/?p=2">2</a></li>
+        <li><a href="/?p=3">3</a></li>
+        <li><a href="/?p=4">4</a></li>
+        <li><a href="/?p=5">5</a></li>
+        <li><a href="/?p=6">6</a></li>
+
+    <li><a rel="next" href="/?p=2">&raquo;</a></li>
+</ul>
+</nav>
+
+</div>
+		</div> <!-- /container -->
+
+		<footer style="text-align: center;">
+			<p>Dark Mode: <a href="#" id="themeToggle">Toggle</a></p>
+		</footer>
+	</body>
+</html>

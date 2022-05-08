@@ -1,0 +1,12 @@
+[package]
+name = "anime-scrapper"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = { version = "0.11.10", features = ["blocking", "cookies", "gzip"] }
+scraper = "0.13.0"
+open = "2.1.2"
+requestty = "0.3.0"
